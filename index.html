@@ -1,1 +1,216 @@
-Hi
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Yuki Arimo</title>
+  <link rel="canonical" href="https://www.yukiarimo.com/">
+  <meta property="og:url" content="https://www.yukiarimo.com/">
+  <meta property="og:image" content="https://www.yukiarimo.com/assets/img/yukiarimo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta name="description" content="Personal Portfolio">
+  <meta property="og:title" content="Yuki Arimo">
+  <meta name="twitter:image" content="https://www.yukiarimo.com/assets/img/yukiarimo.png">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Yuki Arimo",
+      "url": "https://www.yukiarimo.com"
+    }
+  </script>
+  <script>
+    (function () {
+
+      // JavaScript snippet handling Dark/Light mode switching
+
+      const getStoredTheme = () => localStorage.getItem('theme');
+      const setStoredTheme = theme => localStorage.setItem('theme', theme);
+      const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+      const getPreferredTheme = () => {
+
+        if (forcedTheme) return forcedTheme;
+
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          return storedTheme;
+        }
+
+        const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+        if (pageTheme) {
+          return pageTheme;
+        }
+
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      const setTheme = theme => {
+        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme);
+        }
+      }
+
+      setTheme(getPreferredTheme());
+
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+        if (!themeSwitchers.length) return;
+
+        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+          element.classList.remove('active');
+          element.setAttribute('aria-pressed', 'false');
+        });
+
+        for (const themeSwitcher of themeSwitchers) {
+
+          const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+          if (btnToActivate) {
+            btnToActivate.classList.add('active');
+            btnToActivate.setAttribute('aria-pressed', 'true');
+          }
+        }
+      }
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+          setTheme(getPreferredTheme());
+        }
+      });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme());
+
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              const theme = toggle.getAttribute('data-bs-theme-value');
+              setStoredTheme(theme);
+              setTheme(theme);
+              showActiveTheme(theme);
+            })
+          })
+      });
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/img/yukiarimo.png">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=0fb2ebb34a7b0788701748ebb700a7a9">
+  <link rel="manifest" href="manifest.json?h=0c19401b55abb460f0b99109e3e619fb">
+  <link rel="stylesheet" href="assets/css/Lato.css?h=a3cc39638c84de2c21f45a8fdcd55e4f">
+  <link rel="stylesheet" href="assets/css/Montserrat.css?h=7777965f11a96150fbd91f4368ccb664">
+  <link rel="stylesheet" href="assets/css/swiper-icons.css?h=c7acc97a8ef16e20b0cd8626a5c9c098">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=d98553506d4393860db8a633e4842ead">
+  <link rel="stylesheet" href="assets/css/aos.min.css?h=ea67d3638a91cd05d22f1b4e31c7b746">
+  <link rel="stylesheet" href="assets/css/Articles-Cards-images.css?h=4f3cfa46e40e236365345fc77963f4b8">
+  <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css?h=b2e8d5a1d0e80833f32608dcfff200b6">
+  <link rel="stylesheet" href="assets/css/Simple-Slider.css?h=da830b6503e0457b5735b0129f20b163">
+  <script src="FeedReader.js"></script>
+</head>
+
+<body class="bg-dark" id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+  <nav class="navbar navbar-expand-lg fixed-top bg-secondary text-uppercase navbar-light" id="mainNav">
+    <div class="container"><a class="navbar-brand" href="#page-top">Yuki Arimo News</a><button data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive"
+        class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
+          class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+              href="#portfolio">Portfolio</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#blog">Blog</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="text-center text-white bg-primary masthead">
+    <div class="container"><img class="rounded-circle img-fluid d-block mx-auto mb-5">
+      <h1>Yuki Arimo News</h1>
+      <hr class="star-light">
+      <h2 class="font-weight-light mb-0">AI Rinri - Yuna AI - Code Rinri - Yuki Story</h2>
+    </div>
+  </header>
+  <section data-aos="fade" class="text-white mb-0" id="about">
+    <div class="container">
+      <h2 class="text-uppercase text-center text-primary">About</h2>
+      <hr class="star mb-5">
+      <div class="row">
+        <div id="content" class="container" style="text-align: left;">
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4"><a class="btn btn-secondary btn-xl" role="button"
+        href="https://github.com/yukiarimo"><span>GitHub Portfolio</span></a></div>
+    </div>
+  </section>
+
+  <footer class="text-center footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Location</h4>
+          <p>Canada, Calgary</p>
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase">Find me</h4>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-support fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-github fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-reddit fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-deviantart fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-flickr fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-youtube-play fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle"
+                role="button" href="#"><i class="fa fa-file-powerpoint-o fa-fw"></i></a><a
+                class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="#"><i
+                  class="fa fa-telegram fa-fw"></i></a><a
+                class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="#"><i
+                  class="fa fa-cc-discover fa-fw"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-uppercase mb-4">Future</h4>
+          <p class="lead mb-0"><span>My story is just the beginning! Join me, and we'll see where this journey will take
+              us!</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="text-center text-white copyright py-4">
+    <div class="container"><small>Copyright ©&nbsp;Yuki Arimo 2023</small></div>
+  </div>
+  <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white"
+      href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+
+  <script src="assets/bootstrap/js/bootstrap.min.js?h=e55bde7d6e36ebf17ba0b8c1e80e4065"></script>
+  <script src="assets/js/aos.min.js?h=d3718e34eeb0355be8e3179a2e2bccb7"></script>
+  <script src="assets/js/bs-init.js?h=d0c6de1d0ecd5065d55e7b94664b5b10"></script>
+  <script src="assets/js/freelancer.js?h=3feb602c24e264789bbbabe49aeb2cb8"></script>
+</body>
+
+</html>
